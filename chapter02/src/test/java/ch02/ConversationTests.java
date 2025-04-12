@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import ch02.service.ConversationChatService;
+import common.Util;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -51,39 +52,6 @@ public class ConversationTests {
         System.out.println("-----");
     }
 
-    private void display(String query, List<Message> messages, List<Generation> output) {
-        System.out.println("========================================================================");
-        System.out.println(query);
-        System.out.println();
-        System.out.println("## Messages/Context");
-        int nx = 0;
-        for (Message message : messages) {
-            nx += 1;
-            System.out.println("### Messages[" + nx + "]");
-            String[] lines = WordUtils.wrap(message.getText(), 72, "\n", true)
-                    .split("\\n");
-            for (String line : lines) {
-                System.out.println(line);
-            }
-            System.out.println();
-        }
-        System.out.println();
-        System.out.println("## Replies");
-        nx = 0;
-        for (Generation reply : output) {
-            nx += 1;
-            System.out.println("### Replies[" + nx + "]");
-            String[] lines = WordUtils.wrap(reply.getOutput().getText(), 72, "\n", true)
-                    .split("\\n");
-            for (String line : lines) {
-                System.out.println(line);
-            }
-            System.out.println();
-        }
-        System.out.println("========================================================================");
-        System.out.println();
-    }
-
     @Test
     @Order(1)
     public void simpleConversation() {
@@ -91,7 +59,7 @@ public class ConversationTests {
         List<Message> messages = List.of(new UserMessage(query));
         OpenAiChatOptions options = OpenAiChatOptions.builder().build();
         List<Generation> output = conversationChatService.converse(messages, options);
-        display(query, messages, output);
+        Util.display(query, messages, output);
         AssistantMessage first = getAssistantMessage(output);
         Assertions.assertTrue(first.getText().contains("0.6"));
     }
@@ -107,7 +75,7 @@ public class ConversationTests {
         messages.add(new UserMessage(query));
 
         List<Generation> conversation = conversationChatService.converse(messages, options);
-        display(query, messages, conversation);
+        Util.display(query, messages, conversation);
         AssistantMessage first = getAssistantMessage(conversation);
         Assertions.assertTrue(first.getText().contains("0.6"));
 
@@ -117,7 +85,7 @@ public class ConversationTests {
         // Now we want to add some extra context of our own
         messages.add(new UserMessage("And if z=3?"));
         List<Generation> conversation2 = conversationChatService.converse(messages, options);
-        display(query, messages, conversation2);
+        Util.display(query, messages, conversation2);
         AssistantMessage second = getAssistantMessage(conversation2);
         Assertions.assertTrue(second.getText().contains("0.4"));
     }

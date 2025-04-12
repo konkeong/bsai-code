@@ -7,21 +7,11 @@
         <artifactId>bsai-code</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>chapter02</artifactId>
+    <artifactId>common</artifactId>
+    <version>1.0</version>
     <packaging>jar</packaging>
-    <name>Chapter 2</name>
+    <name>Common shareable code</name>
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>com.vaadin.external.google</groupId>
-                    <artifactId>android-json</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-math3</artifactId>
@@ -30,18 +20,9 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-text</artifactId>
         </dependency>
-        <dependency>
+            <dependency>
             <groupId>org.springframework.ai</groupId>
             <artifactId>spring-ai-openai-spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.apress</groupId>
-            <artifactId>common</artifactId>
-            <version>1.0</version>
         </dependency>
     </dependencies>
 </project>

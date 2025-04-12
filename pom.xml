@@ -15,7 +15,9 @@
     <name>Beginning Spring AI</name>
     <description>https://link.springer.com/book/10.1007/979-8-8688-1291-0</description>
     <modules>
+        <module>common</module>
         <module>chapter02</module>
+        <module>chapter03</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -7,9 +7,9 @@
         <artifactId>bsai-code</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>chapter02</artifactId>
+    <artifactId>chapter03</artifactId>
     <packaging>jar</packaging>
-    <name>Chapter 2</name>
+    <name>Chapter 3</name>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
