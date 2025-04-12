@@ -45,7 +45,7 @@ public class UpdateLightStructuredTests extends BaseLightTests {
 
         UpdateStructuredChatService.LightWithXYZ purple = find("Purple", response.lights());
         Assertions.assertFalse(purple.on(), "purple is off");
-        Assertions.assertEquals(0.6, purple.x());
+        Assertions.assertEquals(0.3, purple.x());
         Assertions.assertEquals(0.15, purple.y());
         Assertions.assertEquals(0.55, purple.z());
     }
