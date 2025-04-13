@@ -23,7 +23,7 @@ public final class Util {
         if (messages != null && !messages.isEmpty()) {
             System.out.println("## Messages/Context");
             int nx = 0;
-                for (Message message : messages) {
+            for (Message message : messages) {
                 nx += 1;
                 System.out.println("### Messages[" + nx + "]");
                 String[] lines = WordUtils.wrap(message.getText(), 72, "\n", true)

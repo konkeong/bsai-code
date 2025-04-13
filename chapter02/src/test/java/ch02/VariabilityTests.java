@@ -76,7 +76,7 @@ public class VariabilityTests {
          * slope should be negative to indicate less similarity
          * although top_p is less predictable here
          */
-        System.out.println((useTemperature ? "temparature": "top_p") + " :: slope=[" + slope + "]");
+        System.out.println((useTemperature ? "temparature" : "top_p") + " :: slope=[" + slope + "]");
         Assertions.assertTrue(slope < (useTemperature ? 0.0 : 0.05));
     }
 

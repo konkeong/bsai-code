@@ -17,9 +17,11 @@ public class RequestLightStatusFunction implements Function<RequestLightStatusFu
 
     private final Logger log = LoggerFactory.getLogger(getClass());
 
-    public record Request (String color) { }
+    public record Request(String color) {
+    }
 
-    public record Response (String color, boolean on) { }
+    public record Response(String color, boolean on) {
+    }
 
     protected LightService lightService;
 

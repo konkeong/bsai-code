@@ -22,11 +22,11 @@ public class OptionTests {
          * "The speed of a typical junk carrying tea in November in the South China Sea can vary depending on various factors such as wind conditions, currents, and the size and design of the junk. However, on average, junks in the South China Sea can sail at speeds ranging from 4 to 8 knots (4.6 to 9.2 miles per hour). It is important to note that this is just an estimate and actual speeds may vary."
          */
         String response = optionChatService.query(
-            query,
-            OpenAiChatOptions.builder()
-                    .model("gpt-3.5-turbo")
-                    .temperature(1.0)
-                    .build());
+                query,
+                OpenAiChatOptions.builder()
+                        .model("gpt-3.5-turbo")
+                        .temperature(1.0)
+                        .build());
         System.out.println("response: " + response);
         Assertions.assertTrue(response.toLowerCase().contains("south china sea"));
     }

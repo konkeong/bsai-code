@@ -33,8 +33,7 @@ public class VoiceAssistantService {
     public VoiceAssistantService(
             UpdateChatService updateChatService,
             TranscribeService transcribeService,
-            TextToSpeechService textToSpeechService
-    ) {
+            TextToSpeechService textToSpeechService) {
         this.updateChatService = updateChatService;
         this.transcribeService = transcribeService;
         this.textToSpeechService = textToSpeechService;

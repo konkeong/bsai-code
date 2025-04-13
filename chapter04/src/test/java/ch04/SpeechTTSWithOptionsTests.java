@@ -24,11 +24,11 @@ public class SpeechTTSWithOptionsTests {
     @Test
     public void runTTSQuery() throws IOException {
         String lyric = """
-        Happy birthday to you
-        Happy birthday to you
-        Happy birthday, happy birthday
-        Happy birthday to you
-        """;
+                Happy birthday to you
+                Happy birthday to you
+                Happy birthday, happy birthday
+                Happy birthday to you
+                """;
 
         OpenAiAudioSpeechOptions options = OpenAiAudioSpeechOptions.builder()
                 .model(OpenAiAudioApi.TtsModel.TTS_1.value)

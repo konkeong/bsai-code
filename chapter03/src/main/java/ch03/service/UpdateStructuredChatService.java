@@ -13,9 +13,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class UpdateStructuredChatService {
 
-    public record LightWithXYZ (String color, boolean on, Double x, Double y, Double z) { }
+    public record LightWithXYZ(String color, boolean on, Double x, Double y, Double z) {
+    }
 
-    public record LightWithXYZList (List<LightWithXYZ> lights) { }
+    public record LightWithXYZList(List<LightWithXYZ> lights) {
+    }
 
     protected final ChatClient client;
 
