@@ -1,0 +1,8 @@
+It is incredible to think about the mountain of image data and technological
+achievement that is involved in taking a random set of text input and creating
+an image to represent it. At a super high level, the text that is entered is
+tokenized with a transformer and converted into a high-dimensional embedding.
+That embedding is then mapped to a shared latent space where the relationship
+between text and visual concepts is learned. The latent space is then passed
+through a generative diffusion model to create an image using the text
+embeddings and decoded into an image using CLIP contrastive learning model.

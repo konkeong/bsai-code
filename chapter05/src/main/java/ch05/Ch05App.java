@@ -1,4 +1,4 @@
-package ch04;
+package ch05;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.boot.SpringApplication;
@@ -14,7 +14,7 @@ import ch03.service.UpdateChatService;
 import ch03.service.UpdateLightStatusFunction;
 
 @SpringBootApplication
-public class Ch04App {
+public class Ch05App {
 
     @Bean
     public Light getYellowLight() {
@@ -59,7 +59,7 @@ public class Ch04App {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(Ch04App.class, args);
+        SpringApplication.run(Ch05App.class, args);
     }
 
 }
