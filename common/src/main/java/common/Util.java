@@ -20,28 +20,33 @@ public final class Util {
         System.out.println("========================================================================");
         System.out.println(query);
         System.out.println();
-        System.out.println("## Messages/Context");
-        int nx = 0;
-        for (Message message : messages) {
-            nx += 1;
-            System.out.println("### Messages[" + nx + "]");
-            String[] lines = WordUtils.wrap(message.getText(), 72, "\n", true)
-                    .split("\\n");
-            for (String line : lines) {
-                System.out.println(line);
+        if (messages != null && !messages.isEmpty()) {
+            System.out.println("## Messages/Context");
+            int nx = 0;
+                for (Message message : messages) {
+                nx += 1;
+                System.out.println("### Messages[" + nx + "]");
+                String[] lines = WordUtils.wrap(message.getText(), 72, "\n", true)
+                        .split("\\n");
+                for (String line : lines) {
+                    System.out.println(line);
+                }
+                System.out.println();
             }
             System.out.println();
         }
-        System.out.println();
-        System.out.println("## Replies");
-        nx = 0;
-        for (Generation reply : output) {
-            nx += 1;
-            System.out.println("### Replies[" + nx + "]");
-            String[] lines = WordUtils.wrap(reply.getOutput().getText(), 72, "\n", true)
-                    .split("\\n");
-            for (String line : lines) {
-                System.out.println(line);
+        if (output != null && !output.isEmpty()) {
+            System.out.println("## Replies");
+            int nx = 0;
+            for (Generation reply : output) {
+                nx += 1;
+                System.out.println("### Replies[" + nx + "]");
+                String[] lines = WordUtils.wrap(reply.getOutput().getText(), 72, "\n", true)
+                        .split("\\n");
+                for (String line : lines) {
+                    System.out.println(line);
+                }
+                System.out.println();
             }
             System.out.println();
         }

@@ -1,0 +1,17 @@
+curl -X POST http://localhost:8080/api/tts \
+-H "Content-Type: application/json" \
+--output test.mp3 \
+--data-binary @- << EOF
+{"text": "Daisy, Daisy, \nGive me your answer, do! \nI'm half crazy, \nAll for the love of you! \nIt won't be a stylish marriage, \nI can't afford a carriage, \nBut you'll look sweet upon the seat \nOf a bicycle built for two!"}
+EOF
+
+curl -X POST http://localhost:8080/api/transcribe \
+-F "file=@./src/test/resources/Daisy_Bell_sung_by_DECtalk.flac"
+
+
+curl -X POST http://localhost:8080/api/tts \
+-H "Content-Type: application/json" \
+--output vacmd_turn_on_yellow_light.mp3 \
+--data-binary @- << EOF
+{"text": "Turn on yellow light."}
+EOF

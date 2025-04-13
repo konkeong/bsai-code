@@ -17,9 +17,9 @@ public class UpdateLightStatusFunction implements Function<UpdateLightStatusFunc
 
     private final Logger log = LoggerFactory.getLogger(getClass());
 
-    public record Request(String color, boolean on) { }
+    public record Request (String color, boolean on) { }
 
-    public record Response(String color, boolean on) { }
+    public record Response (String color, boolean on) { }
 
     protected LightService lightService;
 

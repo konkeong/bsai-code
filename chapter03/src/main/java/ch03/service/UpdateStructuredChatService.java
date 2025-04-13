@@ -1,14 +1,11 @@
 package ch03.service;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.messages.Message;
 import org.springframework.ai.chat.messages.SystemMessage;
-import org.springframework.ai.chat.model.ChatResponse;
-import org.springframework.ai.chat.model.Generation;
 import org.springframework.ai.openai.OpenAiChatOptions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,9 +13,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class UpdateStructuredChatService {
 
-    public record LightWithXYZ(String color, boolean on, Double x, Double y, Double z) { }
+    public record LightWithXYZ (String color, boolean on, Double x, Double y, Double z) { }
 
-    public record LightWithXYZList(List<LightWithXYZ> lights) { }
+    public record LightWithXYZList (List<LightWithXYZ> lights) { }
 
     protected final ChatClient client;
 
